@@ -1,6 +1,15 @@
 {
   "name": "CucumberExamples",
   "type": "module",
+  "scripts": {
+    "clean": "read -p \"Are you sure you want to clean the project? [y/n] \" REPLY; if [[ $REPLY =~ ^[Yy]$ ]]; then rm -R .git .github demo-app test .codeclimate.yml .travis.yml jest.json wdio.BUILD.conf.js src/features/**; fi",
+    "test": "run-s test:*",
+    "test:lint": "eslint 'src/**/*.ts' 'test/**/*.js!(setup.js)'",
+    "test:unit": "jest --config=jest.config.cjs --detectOpenHandles",
+    "test:features": "wdio run wdio.BUILD.conf.ts",
+    "wdio": "wdio run wdio.BUILD.conf.ts",
+    "tag": "wdio run wdio.conf.ts --cucumberOpts.tagExpression"
+  },
   "devDependencies": {
     "@wdio/cli": "^9.2.11",
     "@wdio/cucumber-framework": "^9.2.8",
