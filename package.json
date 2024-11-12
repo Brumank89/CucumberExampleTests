@@ -8,7 +8,7 @@
     "test:unit": "jest --config=jest.config.cjs --detectOpenHandles",
     "test:features": "wdio run wdio.BUILD.conf.ts",
     "wdio": "wdio run wdio.BUILD.conf.ts",
-    "tag": "wdio run wdio.conf.ts --cucumberOpts.tagExpression"
+    "tag": "wdio run wdio.conf.ts --cucumberOpts.tags"
   },
   "devDependencies": {
     "@wdio/cli": "^9.2.11",
