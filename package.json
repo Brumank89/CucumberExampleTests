@@ -15,7 +15,8 @@
     "@wdio/cucumber-framework": "^9.2.8",
     "@wdio/local-runner": "^9.2.11",
     "@wdio/spec-reporter": "^9.2.8",
-    "@wdio/visual-service": "^6.2.2"
+    "@wdio/visual-service": "^6.2.2",
+    "chromedriver": "^131.0.0"
   },
   "dependencies": {
     "wdio-chromedriver-service": "^8.1.1"
