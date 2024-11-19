@@ -51,9 +51,26 @@ export const config: WebdriverIO.Config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
+    
+   capabilities: [
+    {
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: [
+                '--headless', // Ejecuta Chrome en modo headless
+                '--disable-gpu', // Desactiva la aceleración por GPU
+                '--no-sandbox', // Evita problemas de permisos
+                '--disable-dev-shm-usage', // Usa /tmp en lugar de /dev/shm
+                '--disable-extensions', // Desactiva extensiones
+                '--disable-infobars', // Elimina la barra de información
+                '--disable-notifications', // Desactiva notificaciones del navegador
+                '--remote-debugging-port=9222', // Habilita puerto de depuración remota
+            ],
+        },
+    }
+],
+services: ['chromedriver'],
+
 
     //
     // ===================
